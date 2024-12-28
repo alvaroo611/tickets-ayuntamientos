@@ -1,0 +1,163 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e92132, #360643);
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.login-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  width: 400px;
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.login-header .logo {
+  width: 80px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #8e0e0e;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 15px;
+  color: #b0b0b0;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #8e0e0e;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #333;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  background-color: #f9f9f9;
+}
+
+input:focus {
+  border-color: #ff5f6d;
+  outline: none;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(255, 95, 109, 0.5);
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background-color: #ff5f6d;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+}
+
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #e14b56;
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.login-footer {
+  font-size: 14px;
+  color: #666;
+  margin-top: 20px;
+}
+
+.login-footer a {
+  color: #ff5f6d;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Contenedor de la contraseña */
+.password-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.password-container input {
+  flex: 1;
+  padding-right: 40px; /* Espacio para el botón de visibilidad */
+}
+
+.toggle-password-btn {
+  position: absolute;
+  max-width: 5vh;
+  max-height: 6vh;
+  margin-bottom: 2vh;
+  right: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #666;
+}
+
+
+
+.toggle-password-btn mat-icon {
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

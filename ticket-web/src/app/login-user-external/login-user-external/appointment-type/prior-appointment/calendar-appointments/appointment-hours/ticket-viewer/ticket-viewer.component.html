@@ -1,0 +1,18 @@
+<div class="ticket-container">
+  <button class="close-button" (click)="closeDialog()">✖</button> <!-- Botón de cerrar -->
+  <div class="ticket-header">
+    <h1>{{ employeeDetails?.cityCouncil?.name }}</h1>
+    <hr />
+  </div>
+  <div class="ticket-details">
+    <p><strong>Solicitante:</strong> {{ ticketData.external_user_name }} (DNI: {{ ticketData.requester_dni }})</p>
+    <p><strong>Departamento:</strong> {{ ticketData.department_name }}</p>
+    <p><strong>Fecha de la cita:</strong> {{ ticketData.appointment_date | date: 'dd/MM/yy, HH:mm' }}</p>
+    <p><strong>Sala:</strong> {{ roomDetails?.building }}  - Piso {{ roomDetails?.floor }} - Oficina {{ roomDetails?.office }} - Mesa {{table}}</p>
+    <p><strong>Responsable del Departamento:</strong> {{ roomDetails?.department?.responsible }}</p>
+    <p><strong>Técnico asignado:</strong> {{ employeeDetails?.name }}</p>
+  </div>
+  <div class="actions">
+    <button (click)="downloadTicketAsPDF()">Guardar como PDF</button>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="selection-container">
+  <div class="selection-card">
+    <button mat-icon-button class="back-button" (click)="goBack()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <h2>¿Qué tipo de cita necesitas?</h2>
+    <p>Selecciona una opción para continuar:</p>
+    <div class="buttons-container">
+      <button class="option-button" (click)="selectOption('previa')">Cita Previa</button>
+      <button class="option-button" (click)="selectOption('presencial')">Cita Presencial</button>
+    </div>
+  </div>
+</div>

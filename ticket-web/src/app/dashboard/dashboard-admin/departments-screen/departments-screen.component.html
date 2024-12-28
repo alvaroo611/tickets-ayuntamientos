@@ -1,0 +1,67 @@
+<div class="department-header">
+  <button class="back-button" mat-icon-button (click)="closeTab()">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <h2>Departamentos</h2>
+</div>
+
+
+<div class="department-list"><!-- Barra de búsqueda y botón de crear -->
+
+  <div class="header-actions d-flex align-items-center">
+    <div class="input-group google-search-bar flex-grow-1">
+      <input type="text" class="form-control" placeholder="Buscar..." (input)="onSearch($event)" aria-label="Buscar...">
+      <button class="btn btn-outline-secondary" type="button">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+    <button mat-raised-button color="primary" (click)="openCreateDepartmentDialog()" class="create-department-btn ms-3">
+      <mat-icon>add</mat-icon> Crear Nuevo Departamento
+    </button>
+  </div>
+
+  <!-- Lista de departamentos -->
+  <ul class="department-items">
+    <li *ngFor="let department of filteredDepartments" class="department-item">
+      <div class="department-info">
+        <h3>
+          <mat-icon>business</mat-icon> {{ department.departmentName }}
+        </h3>
+        <p><strong>{{ department.description }}</strong></p>
+        <p><strong>Responsable: {{ department.responsible }}</strong> </p>
+        <div *ngIf="!department.isAdmin" >
+          <div [ngClass]="department.isActive ? 'status-badge status-active' : 'status-badge status-inactive'">
+            {{ department.isActive ? 'Activo' : 'Inactivo' }}
+          </div>
+        </div>
+
+        <div *ngIf="department.isAdmin" class="status-badge status-admin">
+          Admin
+        </div>
+
+      </div>
+      <div class="department-actions">
+        <div *ngIf="!department.isAdmin" >
+          <button mat-raised-button color="primary" class="configure-department-btn" (click)="configureDepartment(department)">
+            <mat-icon>settings</mat-icon> Configurar
+          </button>
+          <span class="divider"></span>
+
+        </div>
+
+
+        <button mat-icon-button color="accent" (click)="openEditDepartmentDialog(department)">
+          <mat-icon>edit</mat-icon>
+      </button>
+      <div *ngIf="!department.isAdmin">
+        <button mat-icon-button color="warn" (click)="updateDepartmentStatus(department)">
+          <mat-icon>delete</mat-icon>
+      </button>
+
+      </div>
+
+    </div>
+
+    </li>
+  </ul>
+</div>

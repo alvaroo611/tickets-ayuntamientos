@@ -1,0 +1,102 @@
+<div class="login-container">
+  <div class="login-card">
+    <!-- Encabezado -->
+    <div class="login-header">
+      <h2>Reserva tu cita</h2>
+      <p>Completa los siguientes datos para agendar tu cita</p>
+    </div>
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm" class="login-form">
+      <!-- DNI -->
+      <div class="form-group">
+        <label for="dni">DNI</label>
+        <div class="input-wrapper">
+          <input
+            type="text"
+            id="dni"
+            name="dni"
+            [(ngModel)]="dni"
+            #dniInput="ngModel"
+            required
+            pattern="^[0-9]{8}[A-Za-z]$"
+            class="input-field"
+            placeholder="Ej: 12345678A"
+          />
+          <mat-icon *ngIf="dniInput.invalid && dniInput.touched" class="error-icon">error_outline</mat-icon>
+        </div>
+        <div *ngIf="dniInput.invalid && dniInput.touched" class="error">
+          <p *ngIf="dniInput.errors?.['required']">El DNI es obligatorio.</p>
+          <p *ngIf="dniInput.errors?.['pattern']">Formato de DNI inválido.</p>
+        </div>
+      </div>
+
+      <!-- Nombre completo -->
+      <div class="form-group">
+        <label for="nombre">Nombre completo</label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          [(ngModel)]="nombre"
+          #nombreInput="ngModel"
+          required
+          minlength="3"
+          class="input-field"
+          placeholder="Ej: Juan Pérez"
+        />
+        <div *ngIf="nombreInput.invalid && nombreInput.touched" class="error">
+          <p *ngIf="nombreInput.errors?.['required']">El nombre completo es obligatorio.</p>
+          <p *ngIf="nombreInput.errors?.['minlength']">Debe tener al menos 3 caracteres.</p>
+        </div>
+      </div>
+
+      <!-- Teléfono -->
+      <div class="form-group">
+        <label for="telefono">Teléfono</label>
+        <input
+          type="tel"
+          id="telefono"
+          name="telefono"
+          [(ngModel)]="telefono"
+          #telefonoInput="ngModel"
+          required
+          pattern="^[0-9]{9}$"
+          class="input-field"
+          placeholder="Ej: 987654321"
+        />
+        <div *ngIf="telefonoInput.invalid && telefonoInput.touched" class="error">
+          <p *ngIf="telefonoInput.errors?.['required']">El número de teléfono es obligatorio.</p>
+          <p *ngIf="telefonoInput.errors?.['pattern']">Debe contener 9 dígitos.</p>
+        </div>
+      </div>
+
+      <!-- Ayuntamiento -->
+      <div class="form-group">
+        <label for="ayuntamiento">Ayuntamiento</label>
+        <select
+          id="ayuntamiento"
+          name="ayuntamiento"
+          [(ngModel)]="ayuntamiento"
+          #ayuntamientoInput="ngModel"
+          required
+          class="input-field"
+        >
+          <option value="" disabled selected>Selecciona tu ayuntamiento</option>
+          <option *ngFor="let council of ayuntamientos" [value]="council.id">
+            {{ council.name }}
+          </option>
+        </select>
+        <div *ngIf="ayuntamientoInput.invalid && ayuntamientoInput.touched" class="error">
+          <p>Seleccionar un ayuntamiento es obligatorio.</p>
+        </div>
+      </div>
+
+      <!-- Botón de envío -->
+      <button type="submit" [disabled]="!loginForm.valid">
+        <mat-icon>login</mat-icon> Reservar
+      </button>
+    </form>
+    <div class="login-footer">
+      <p>¿Problemas? <a href="/login-appointment">Contáctanos</a></p>
+    </div>
+  </div>
+</div>

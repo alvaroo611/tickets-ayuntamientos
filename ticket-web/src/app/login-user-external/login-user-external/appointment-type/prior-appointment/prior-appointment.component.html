@@ -1,0 +1,54 @@
+<!-- Encabezado -->
+<div class="appointment-header">
+  <!-- Botón de Volver (ícono) -->
+  <button mat-icon-button class="back-button" (click)="goBack()">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+
+  <div class="appointment-title">
+    <h1>Selecciona un Departamento</h1>
+  </div>
+  <div class="appointment-subtitle">
+    <p>Elige un departamento para agendar tu cita previa</p>
+  </div>
+</div>
+
+<div class="appointment-container">
+  <!-- Barra de búsqueda -->
+  <div class="header-actions d-flex align-items-center">
+    <div class="input-group google-search-bar flex-grow-1">
+      <input type="text" class="form-control" placeholder="Buscar..." (input)="onSearch($event)" aria-label="Buscar...">
+      <button class="btn btn-outline-secondary" type="button">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Contenido de la página -->
+  <div class="appointment-content" *ngIf="!isLoading; else loading">
+    <div *ngIf="filteredDepartments.length > 0; else noDepartments" class="department-grid">
+      <div class="department-card" *ngFor="let department of filteredDepartments" (click)="selectDepartment(department)">
+        <!-- Icono Business -->
+        <mat-icon class="department-icon">business</mat-icon>
+        <h2>{{ department.departmentName }}</h2>
+        <p>{{ department.description }}</p>
+        <span>Responsable: <strong>{{ department.responsible }}</strong></span>
+      </div>
+    </div>
+  </div>
+
+ <!-- Pantalla de carga -->
+ <ng-template #loading>
+  <div class="loading">
+    <mat-spinner diameter="40"></mat-spinner>
+
+  </div>
+</ng-template>
+
+  <!-- Sin departamentos -->
+  <ng-template #noDepartments>
+    <div class="no-departments">
+      <strong><p>No se encontraron departamentos con los criterios de busqueda especificados.</p></strong>
+    </div>
+  </ng-template>
+</div>

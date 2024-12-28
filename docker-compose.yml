@@ -1,0 +1,52 @@
+
+version: '3.8'
+services:
+
+  client-gateway:
+    build: ./client-gateway
+    ports:
+      - ${CLIENT_GATEWAY_PORT}:${CLIENT_GATEWAY_PORT}
+    volumes:
+      - ./client-gateway/src:/usr/src/app/src
+    command: npm run start:dev
+    environment:
+      PORT: 3000
+      TICKET_MICROSERVICE_PORT: ${TICKET_MICROSERVICE_PORT}
+      TICKET_MICROSERVICE_HOST: ${TICKET_MICROSERVICE_HOST}
+      TICKET_SERVICE: ${TICKET_SERVICE}
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_nestjs
+    restart: always
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_USER: ${MYSQL_ROOT_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+
+  ticket-ms:
+    build: ./ticket-ms
+    volumes:
+      - ./ticket-ms/src:/usr/src/app/src
+    command: npm run start:dev
+    environment:
+      PORT: ${PORT}
+      DB_HOST: ${DB_HOST}
+      JWT_SECRET: ${JWT_SECRET}
+      HOST: ${HOST}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      DB_PORT: ${DB_PORT}
+
+
+     
+
+
+      

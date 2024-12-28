@@ -1,0 +1,40 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum Rol {
+  ADMIN
+  TECHNICIAN
+}
+
+model User {
+  id        String    @id @default(uuid())
+  username  String    @unique
+  password  String
+  type      Rol
+
+  
+  admin     Admin?       
+  technician Technician?  
+}
+
+model Admin {
+  userId    String   @id // Clave primaria, referencia a User
+  adminLevel Int 
+
+  // Relación con el modelo User
+  user User @relation(fields: [userId], references: [id]) 
+}
+
+model Technician {
+  userId String  @id // Clave primaria, referencia a User
+  technicianSkill String
+
+  // Relación con el modelo User
+  user User  @relation(fields: [userId], references: [id])
+}

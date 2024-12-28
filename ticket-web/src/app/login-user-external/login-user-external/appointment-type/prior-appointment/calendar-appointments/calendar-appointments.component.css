@@ -1,0 +1,200 @@
+/* Estilos del encabezado de citas */
+.appointment-header {
+  background-color: #d42d2d; /* Fondo rojo */
+  color: white; /* Letras blancas */
+  text-align: center; /* Centra el contenido */
+  padding: 20px 0; /* Espaciado interno */
+  margin-bottom: 30px; /* Separación del calendario */
+  position: relative;
+}
+/* Estilo para la cabecera de los días de la semana */
+.calendar-days-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 columnas para los 7 días */
+  text-align: center;
+  margin-top: 5vh;
+  margin-bottom: 10px;
+}
+
+.day {
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 5px;
+  background-color: #f0f0f0; /* Fondo gris claro */
+
+  color: #333;
+}
+
+.day:hover {
+  background-color: #d0d0d0; /* Cambio de color al pasar el ratón */
+  cursor: pointer;
+}
+
+/* Otros estilos para el calendario */
+.calendar-container {
+  margin: 20px auto;
+  width: 100%;
+  max-width: 500px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+}
+
+.calendar-header button {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.calendar-header span {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.calendar-day {
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+
+.calendar-day.previous-month {
+  color: #ccc;
+}
+
+.appointment-header h1 {
+  font-size: 40px; /* Tamaño de fuente mayor */
+  font-family: 'Roboto', sans-serif; /* Fuente más moderna */
+  font-weight: bold; /* Negrita */
+  text-transform: uppercase; /* Transformación a mayúsculas */
+  letter-spacing: 2px; /* Espaciado entre letras */
+  margin: 0; /* Elimina márgenes adicionales */
+  color: #fff; /* Color blanco */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra de texto para un efecto 3D */
+}
+
+/* Estilo del subtítulo */
+.appointment-header p {
+  font-size: 18px;
+  margin: 10px 0 0 0; /* Espaciado superior */
+  font-family: 'Roboto', sans-serif; /* Fuente más limpia */
+  color: rgba(255, 255, 255, 0.8); /* Texto blanco con opacidad */
+}
+
+/* Botón mat-icon a la izquierda */
+.back-button {
+  position: absolute;
+  left: 20px; /* Alineación a la izquierda */
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent; /* Sin fondo */
+  color: white; /* Icono blanco */
+  border: none; /* Sin borde */
+  padding: 8px;
+  /* Eliminamos la animación */
+}
+
+/* Estilos del contenedor del calendario */
+.calendar-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto; /* Centra el calendario */
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Encabezado del calendario */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 3px;
+}
+
+.calendar-header button {
+  padding: 10px 20px;
+  background-color: #d42d2d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.calendar-header button:hover {
+  background-color: #a82626; /* Oscurece al pasar el cursor */
+}
+
+/* Título del mes */
+.calendar-header span {
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+/* Grid del calendario */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  padding: 20px 0;
+}
+
+/* Día del calendario */
+.calendar-day {
+  padding: 20px;
+  background-color: #f1f3f4;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.calendar-day:hover {
+  background-color: #d42d2d;
+  color: white;
+  transform: scale(1.05);
+}
+
+.appointments-list {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.appointments-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.appointments-list li {
+  margin-bottom: 10px;
+}
+
+.appointments-list p {
+  margin: 5px 0;
+}
+
+.no-appointments {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #ffdddd;
+  border-radius: 5px;
+  color: #ff0000;
+}
+.back-button mat-icon {
+  font-size: 30px; /* Tamaño del ícono */
+  /* Se elimina la transición del color */
+}

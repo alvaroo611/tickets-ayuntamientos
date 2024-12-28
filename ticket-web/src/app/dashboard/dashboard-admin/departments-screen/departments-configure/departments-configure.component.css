@@ -1,0 +1,162 @@
+/* Estilos generales */
+html, body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.change-password-text {
+  font-size: 0.9em;
+  color: #e74c3c;
+  display: block;
+  margin-top: 4px;
+}
+
+/* Configuración del modal */
+.custom-modal .mat-dialog-container {
+  padding: 0;
+  border-radius: 8px;
+
+  max-height: 90vh; /* Asegura que el modal no exceda la altura de la ventana */
+  box-sizing: border-box; /* Asegura que el padding no añada extra ancho o alto */
+  overflow: hidden;  /* Evita el desbordamiento del modal */
+}
+
+/* Estilo para la descripción del textarea */
+.description-textarea {
+  width: 100%;    /* Ajusta el ancho, por ejemplo, para ocupar todo el espacio disponible */
+  height: 150px;  /* Ajusta la altura según lo que necesites */
+  resize: vertical; /* Permite ajustar manualmente la altura, o usa 'none' para desactivar el ajuste */
+}
+
+/* Formulario centrado y ajustado */
+.department-form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  max-width: 90vw;
+  max-height: 80vh;  /* Limita la altura máxima */
+  overflow-y: auto;  /* Habilita el scroll vertical */
+  overflow-x: hidden; /* Deshabilita el scroll horizontal */
+  transition: all 0.3s ease;
+
+  /* Personalización del scroll */
+  scrollbar-width: thin;  /* Firefox */
+  scrollbar-color: #e74c3c #f0f0f0; /* Firefox - color del thumb y el track */
+}
+
+/* Para navegadores Webkit (Chrome, Safari) */
+.department-form::-webkit-scrollbar {
+  width: 8px; /* Ancho del scroll */
+}
+
+.department-form::-webkit-scrollbar-thumb {
+  background-color: #e74c3c; /* Color del "thumb" (parte que se arrastra) */
+  border-radius: 10px;
+}
+
+.department-form::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* Color de la pista (background del scroll) */
+  border-radius: 10px;
+}
+
+.department-form::-webkit-scrollbar-thumb:hover {
+  background-color: #c0392b; /* Color del thumb cuando está siendo arrastrado */
+}
+
+/* Título del formulario */
+.employee-form h2 {
+  text-align: center;
+  color: #e74c3c;
+  margin-bottom: 20px;
+}
+
+/* Estilos de los grupos de formulario */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #e74c3c;
+  outline: none;
+  background-color: #fff;
+}
+
+/* Estilo del checkbox */
+.form-group input[type="checkbox"] {
+  width: auto;
+  margin-top: 5px;
+}
+
+/* Estilo del botón */
+.submit-btn {
+  background-color: #e74c3c;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Botón de cierre en la esquina superior derecha */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+
+  color: #e74c3c;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #c0392b;
+}
+
+/* Estilo para el mensaje de éxito */
+.success-snack {
+  background-color: green;
+  color: white;
+}
+
+/* Estilo para el mensaje de error */
+.error-snack {
+  background-color: red;
+  color: white;
+}

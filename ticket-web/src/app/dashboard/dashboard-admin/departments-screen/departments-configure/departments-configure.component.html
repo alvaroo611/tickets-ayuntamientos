@@ -1,0 +1,42 @@
+<div class="department-form">
+  <button class="close-btn" (click)="closeDialog()">×</button>
+
+  <div *ngIf="departmentData && departmentData[0]">
+    <!-- Hora de inicio -->
+    <div class="form-group">
+      <label for="horaInicio">Hora de Inicio:</label>
+      <input
+        id="horaInicio"
+        type="time"
+        [(ngModel)]="departmentData[0].horaInicio"
+        required
+      />
+    </div>
+
+    <!-- Hora final -->
+    <div class="form-group">
+      <label for="horaFinal">Hora de Finalización:</label>
+      <input
+        id="horaFinal"
+        type="time"
+        [(ngModel)]="departmentData[0].horaFinal"
+        required
+      />
+    </div>
+
+    <!-- Intervalo -->
+    <div class="form-group">
+      <label for="intervalo">Intervalo (en minutos):</label>
+      <input
+        id="intervalo"
+        type="number"
+        [(ngModel)]="departmentData[0].intervalo"
+        min="1"
+        max="120"
+        required
+      />
+    </div>
+
+    <button class="submit-btn" (click)="saveConfiguration()">Actualizar Configuración</button>
+  </div>
+</div>

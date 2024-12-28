@@ -1,0 +1,177 @@
+/* Estilos generales */
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e92132, #360643);
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Contenedor principal */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Tarjeta central */
+.login-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  text-align: center;
+  animation: slideIn 0.6s ease-out;
+  position: relative; /* Asegura que el botón de atrás esté posicionado en relación con la tarjeta */
+}
+
+
+/* Cabecera */
+.login-header h2 {
+
+  font-size: 24px;
+  color: #8e0e0e;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.login-header p {
+  font-size: 14px;
+  color: #b0b0b0;
+  margin-bottom: 20px;
+}
+
+/* Botón de Atrás */
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10; /* Asegura que esté encima de otros elementos */
+}
+
+.back-button mat-icon {
+  font-size: 24px;
+  color: #8e0e0e;
+}
+
+.back-button:hover mat-icon {
+  color: #d32f2f;
+}
+
+/* Contenedor del formulario */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #8e0e0e;
+}
+
+/* Contenedor de input */
+.input-wrapper {
+  position: relative;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.3s ease;
+  background-color: #f7f7f7;
+}
+
+.input-field:focus {
+  border-color: #d32f2f;
+  outline: none;
+  background-color: #ffffff;
+}
+
+/* Icono de error */
+.error-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #e53935;
+  font-size: 18px;
+}
+
+/* Botón de envío */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #d32f2f;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button mat-icon {
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: #a10000;
+}
+
+button:disabled {
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+/* Errores */
+.error {
+  color: #e53935;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+/* Pie de página */
+.login-footer {
+  font-size: 14px;
+  color: #b0b0b0;
+  margin-top: 20px;
+}
+
+.login-footer a {
+  color: #d32f2f;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Animaciones */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

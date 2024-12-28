@@ -1,0 +1,89 @@
+<div class="ticket-header">
+  <button class="back-button" mat-icon-button (click)="closeTab()">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <h2>Tickets</h2>
+</div>
+
+
+<div class="ticket-list">
+  <div class="header-actions d-flex align-items-center">
+    <!-- Filtro por estado del ticket -->
+    <div class="input-group">
+      <select class="form-select custom-select" (change)="onStatusFilterChange($event)">
+        <option value="">Todos los estados</option>
+        <option value="en_cumplimiento">Pendientes</option>
+        <option value="en_progreso">En proceso</option>
+        <option value="finalizado">Finalizados</option>
+      </select>
+    </div>
+
+    <!-- Filtro por rango de fechas -->
+    <div class="filter-container">
+      <h4 class="filter-title">Filtrar por fecha de cita</h4>
+      <div class="input-group">
+        <input
+          type="date"
+          class="form-control custom-date-input"
+          (change)="onStartDateChange($event)"
+          placeholder="Fecha de inicio">
+        <input
+          type="date"
+          class="form-control custom-date-input"
+          (change)="onEndDateChange($event)"
+          placeholder="Fecha de fin">
+      </div>
+    </div>
+
+
+    <!-- Barra de búsqueda -->
+    <div class="input-group google-search-bar flex-grow-1">
+      <input type="text" class="form-control" placeholder="Buscar..." (input)="onSearch($event)">
+      <button class="btn btn-outline-secondary" type="button">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Lista de tickets -->
+  <ul class="ticket-items">
+    <li *ngFor="let ticket of filteredTickets" class="ticket-item">
+      <div class="ticket-info">
+        <h3><mat-icon>assignment</mat-icon> Departamento: {{ ticket.department_name }}</h3>
+        <p><strong>Solicitante:</strong> {{ ticket.external_user_name || 'No especificado' }} (DNI: {{ ticket.requester_dni || 'No disponible' }})</p>
+
+        <p><strong>Fecha de creación:</strong> {{ ticket.creation_date | date:'short' }}</p>
+        <p><strong>Fecha de la cita:</strong> {{ ticket.appointment_date ? (ticket.appointment_date | date:'short') : 'Aún no programada' }}</p>
+
+        <p><strong>Fecha de atención:</strong> {{ ticket.attended_date ? (ticket.attended_date | date:'short') : 'Aún no atendido' }}</p>
+        <p><strong>Fecha de finalización:</strong> {{ ticket.completion_date ? (ticket.completion_date | date:'short') : 'Aún no finalizado' }}</p>
+
+        <p><strong>Notas:</strong> {{ ticket.notes || 'No hay notas disponibles' }}</p>
+        <p><strong>Teléfono:</strong> {{ ticket.phone ? ticket.phone : 'No especificado' }}</p>
+
+        <!-- Estado de ticket y activación -->
+        <div class="status-container">
+          <span class="status-label"></span>
+          <span [ngClass]="{
+            'status-badge': true,
+            'status-en_cumplimiento': ticket.status === 'en_cumplimiento',
+            'status-en_progreso': ticket.status === 'en_progreso',
+            'status-finalizado': ticket.status === 'finalizado'
+          }">
+            {{ ticket.status === 'en_cumplimiento' ? 'Pendiente' : (ticket.status === 'en_progreso' ? 'En proceso' : (ticket.status | titlecase)) }}
+          </span>
+        </div>
+
+        <div [ngClass]="ticket.isActive ? 'status-badge status-active' : 'status-badge status-inactive'">
+          {{ ticket.isActive ? 'Activo' : 'Inactivo' }}
+        </div>
+      </div>
+      <div class="ticket-actions">
+
+        <button mat-icon-button color="warn" (click)="updateTicketStatus(ticket)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>

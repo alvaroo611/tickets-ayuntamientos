@@ -1,0 +1,108 @@
+.ticket-container {
+  width: 150mm;            /* Aumentado de 85mm a 100mm */
+  max-width: 100%;          /* Evita que sea demasiado ancho en pantallas pequeñas */
+  padding: 20px;
+  background-color: #fefefe;
+  border: 2px solid #ddd;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  color: #c32f27;
+  cursor: pointer;
+}
+
+/* Ocultar botones y el botón de cerrar en PDF */
+.hide-buttons .actions,
+.hide-buttons .close-button {
+  display: none;
+}
+
+/* Asegurar que el contenedor sea relativo para el posicionamiento */
+.ticket-container {
+  position: relative;  /* Necesario para posicionar el botón de cerrar */
+}
+
+
+.ticket-header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.ticket-header h1 {
+  color: #c32f27;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.ticket-header hr {
+  border: none;
+  height: 2px;
+  background-color: #c32f27;
+  margin-top: 10px;
+}
+
+.ticket-details {
+  padding: 10px 0;
+}
+
+.ticket-details p {
+  font-size: 15px;
+  margin: 8px 0;
+}
+
+.ticket-details strong {
+  color: #c32f27;
+  display: inline-block;
+  width: 160px; /* Alinea las etiquetas */
+  font-weight: bold;
+}
+
+.actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.actions button {
+  background-color: #c32f27;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.actions button:hover {
+  background-color: #a8291d;
+  transform: translateY(-2px);
+}
+
+/* Ocultar botones en PDF */
+.hide-buttons .actions {
+  display: none;
+}
+
+/* Responsive design for better print format */
+@media print {
+  .ticket-container {
+    box-shadow: none;
+    border: none;
+  }
+
+  .actions {
+    display: none;
+  }
+}

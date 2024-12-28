@@ -1,0 +1,53 @@
+<div class="appointment-header">
+  <!-- Botón de Volver -->
+  <button mat-icon-button class="back-button" (click)="closeTab()">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+
+  <!-- Título y subtítulo -->
+  <div class="appointment-title">
+    <h1>Visualizar Tickets por Sala</h1>
+  </div>
+  <div class="appointment-subtitle">
+    <p>Consulta los tickets asignados a cada sala en tiempo real</p>
+  </div>
+</div>
+
+<div class="room-list">
+  <!-- Barra de búsqueda -->
+  <div class="header-actions d-flex align-items-center">
+    <div class="input-group google-search-bar flex-grow-1">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Buscar sala..."
+        (input)="onSearch($event)"
+        aria-label="Buscar sala..."
+      />
+      <button class="btn btn-outline-secondary" type="button">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Listado de salas -->
+  <ul class="room-items">
+    <li *ngFor="let room of filteredRooms" class="room-item">
+      <div class="room-info">
+        <h3>
+          <mat-icon>meeting_room</mat-icon>
+          {{ room.building }}
+        </h3>
+        <p><strong>Oficina {{ room.office }}, Piso {{ room.floor }}</strong></p>
+
+      </div>
+      <div class="room-actions">
+        <button class="custom-live-button" (click)="viewTickets(room)">
+          <mat-icon>live_tv</mat-icon>
+          Live
+        </button>
+      </div>
+
+    </li>
+  </ul>
+</div>

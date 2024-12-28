@@ -1,0 +1,19 @@
+<div class="live-ticket-room">
+
+  <section class="tickets-container">
+    <div *ngFor="let ticket of tickets | slice:0:4" class="ticket-card" [ngClass]="ticket.status">
+      <div class="ticket-header">
+        <h3>{{ ticket.external_user_name }}</h3>
+        <span class="status-pill">
+          <!-- Comprobación del estado del ticket para mostrar el texto correspondiente -->
+          {{ ticket.status === 'en_cumplimiento' ? 'Pendiente' : ticket.status === 'en_progreso' ? 'En proceso' : ticket.status | titlecase }}
+        </span>
+      </div>
+      <div class="ticket-details">
+
+        <p><strong>Fecha Cita:</strong> {{ ticket.appointment_date | date: 'short' }}</p>
+
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,90 @@
+<div class="dashboard-header">
+  <div class="user-icon-container">
+    <i class="fas fa-user-circle" (click)="toggleLogoutMenu()"></i>
+    <div class="logout-menu" *ngIf="showLogoutMenu">
+      
+      <button (click)="logout()">Salir</button>
+    </div>
+  </div>
+
+  <div class="dashboard-title-container">
+    <h1 class="dashboard-title">Gestión de Tickets</h1>
+  </div>
+ <!-- Menú visible solo si el usuario es responsable -->
+ <ng-container *ngIf="isResponsable">
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="openAssignDialog()">
+      <mat-icon>assignment_ind</mat-icon> Asignar Empleado a Sala
+    </button>
+    <button mat-menu-item (click)="openTecHoursDialog()">
+      <mat-icon>schedule</mat-icon> Técnico Horas Fuera
+    </button>
+    <button mat-menu-item (click)="openRoomTicketsDialog()">
+      <mat-icon>room</mat-icon> Visualizar Tickets por Sala
+    </button>
+  </mat-menu>
+  <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button">
+    <mat-icon>menu</mat-icon>
+  </button>
+</ng-container>
+
+</div>
+
+<div class="dashboard-container">
+  <!-- Resumen de tickets por estado -->
+  <div class="tickets-summary">
+    <div class="ticket-card pending">
+      <h3>Pendiente</h3>
+      <p>{{ pendingTicketsCount }} tickets</p>
+    </div>
+    <div class="ticket-card in-progress">
+      <h3>En Proceso</h3>
+      <p>{{ inProgressTicketsCount }} tickets</p>
+    </div>
+    <div class="ticket-card completed">
+      <h3>Finalizado</h3>
+      <p>{{ completedTicketsCount }} tickets</p>
+    </div>
+  </div>
+
+  <!-- Tickets List -->
+  <div class="tickets-list">
+    <div class="tickets-header">
+      <h2>Mis tickets</h2>
+      <div class="filter-container">
+        <select id="statusFilter" (change)="onStatusFilterChange($event)">
+          <option value="">Todos</option>
+          <option value="en_cumplimiento">Pendientes</option>
+          <option value="en_progreso">En Proceso</option>
+          <option value="finalizado">Finalizados</option>
+        </select>
+      </div>
+    </div>
+
+    <ul>
+      <li *ngFor="let ticket of filteredTickets">
+        <div class="ticket-info">
+
+          <span
+            class="status-badge"
+            [ngClass]="{
+              'status-en_cumplimiento': ticket.status === 'en_cumplimiento',
+              'status-en_progreso': ticket.status === 'en_progreso',
+              'status-finalizado': ticket.status === 'finalizado'
+            }"
+          >
+            {{  getTicketStatusClass(ticket.status)  | uppercase }}
+          </span>
+          <div class="ticket-info">
+            <div class="ticket-name">{{ ticket.external_user_name }}</div>
+            <div class="ticket-date">{{ formatAppointmentDate(ticket.appointment_date) }}</div>
+          </div>
+
+        </div>
+        <button mat-raised-button color="primary" (click)="openTicket(ticket)">
+          Abrir Ticket
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>

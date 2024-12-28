@@ -1,0 +1,64 @@
+/* Título del diálogo */
+.dialog-title {
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 20px 0; /* Espaciado vertical alrededor del título */
+}
+
+/* Contenido del diálogo */
+.dialog-content {
+  padding: 20px; /* Padding alrededor del contenido */
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 20px; /* Espaciado entre el contenido y los botones */
+}
+
+/* Acciones (botones) del diálogo */
+.dialog-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px; /* Padding en los botones */
+}
+
+button {
+  width: 45%;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Estilo para el botón Cancelar */
+.cancel-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+}
+
+/* Estilo para el botón Confirmar */
+.confirm-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+}
+
+/* Agregar efecto de hover en los botones */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Agregar más espacio en general */
+.mat-dialog-container {
+  padding: 20px;
+  max-width: 500px; /* Ajusta el ancho máximo del diálogo */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo del fondo del diálogo */
+.mat-dialog-backdrop {
+  background-color: rgba(0, 0, 0, 0.4); /* Fondo ligeramente oscurecido */
+}

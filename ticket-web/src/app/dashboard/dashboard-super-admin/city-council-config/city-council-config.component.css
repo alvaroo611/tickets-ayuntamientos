@@ -1,0 +1,202 @@
+/* Encabezado General */
+.city-council-header {
+  position: relative;
+  background-color: #d42d2d; /* Fondo rojo */
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+}
+
+.city-council-header h2 {
+  font-size: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Botón Volver */
+.city-council-header .back-button {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  color: white;
+  border: none;
+  padding: 8px;
+}
+
+.city-council-header .back-button mat-icon {
+  font-size: 30px;
+}
+.icon-city-council{
+  color:#d42d2d;
+}
+.city-council-header .back-button:hover mat-icon {
+  color: #313131;
+}
+
+/* Contenedor Principal */
+.city-council-list {
+  padding: 20px;
+  background-color: #ffffff!important;
+  border-radius: 8px;
+
+  margin-top: 6px;
+}
+
+/* Barra de búsqueda y Botón Crear */
+.header-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 40px;
+  margin-left: 3%;
+}
+
+.google-search-bar {
+  max-width: 500px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  background-color: #f1f3f4;
+  height: 50px;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  margin-top: 10px;
+}
+
+.google-search-bar .form-control {
+  border: none;
+  background-color: transparent;
+  padding: 0 15px;
+  font-size: 16px;
+  height: 100%;
+  flex-grow: 1;
+  outline: none;
+}
+
+.google-search-bar .btn {
+  border: none;
+  background-color: #d32f2f; /* Botón rojo */
+  color: white;
+  border-radius: 50%;
+  height: 36px;
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.google-search-bar .btn:hover {
+  background-color: #a60000; /* Rojo más oscuro en hover */
+}
+
+
+
+/* Botón Crear Administrador */
+.create-city-council-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: rgb(220, 28, 28);
+  background-color: #d0d0d0;
+  border: none;
+}
+
+.create-city-council-btn:hover {
+  background-color: #aa9797;
+}
+.subtitle {
+  font-size: 1.2rem;
+  color: #f4c8c8;
+  margin-top: 4px;
+}
+/* Tarjetas de Administradores */
+.city-council-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f6f4f4;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.city-council-item .city-council-info {
+  flex: 1;
+}
+
+.city-council-item h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.city-council-item p {
+  margin: 5px 0 0;
+  color: #333;
+}
+
+.city-council-item .city-council-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.city-council-item .city-council-actions button {
+  padding: 8px;
+  font-size: 14px;
+  color: #f00e0e;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.city-council-item .city-council-actions button:hover {
+  color: #b02424;
+}
+
+/* Estados Activo/Inactivo */
+.status-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  min-width: 70px;
+}
+
+.status-active {
+  background-color: #4caf50;
+  color: rgb(0, 0, 0);
+}
+
+.status-inactive {
+  background-color: #f44336;
+  color: rgb(0, 0, 0);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .city-council-header h2 {
+    font-size: 30px;
+  }
+
+  .google-search-bar {
+    max-width: 100%;
+  }
+}

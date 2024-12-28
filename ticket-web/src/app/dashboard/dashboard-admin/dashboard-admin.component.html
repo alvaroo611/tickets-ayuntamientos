@@ -1,0 +1,26 @@
+<div class="dashboard-header">
+  <div class="user-icon-container">
+    <i class="fas fa-user-circle" (click)="toggleLogoutMenu()"></i>
+    <div class="logout-menu" *ngIf="showLogoutMenu">
+      <button (click)="logout()">Salir</button>
+    </div>
+  </div>
+
+  <div class="dashboard-title-container">
+    <h1 class="dashboard-title">Dashboard Administrativo</h1>
+  </div>
+</div>
+
+<div class="dashboard-container">
+  <div class="dashboard-cards">
+    <div class="card" *ngFor="let item of dashboardItems" (click)="navigateTo(item)">
+      <div class="card-icon">
+        <i class="fa" [ngClass]="item.icon"></i>
+      </div>
+      <div class="card-info">
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>

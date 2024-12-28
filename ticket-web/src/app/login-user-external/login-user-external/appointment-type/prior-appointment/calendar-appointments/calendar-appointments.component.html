@@ -1,0 +1,40 @@
+<div class="appointment-header">
+  <!-- Botón con icono mat-icon alineado a la izquierda -->
+  <button mat-icon-button (click)="goBack()" class="back-button">
+    <mat-icon>arrow_back</mat-icon> <!-- Icono de flecha hacia atrás -->
+  </button>
+
+  <strong><h1>Calendario de Citas</h1></strong>
+  <p>Seleccione una fecha para su cita</p>
+</div>
+
+<div class="calendar-container">
+  <div class="calendar-header">
+    <button (click)="prevMonth()">Mes Anterior</button>
+    <span>{{ currentDate | date: 'MMMM yyyy' }}</span>
+    <button (click)="nextMonth()">Mes Siguiente</button>
+  </div>
+  <div class="calendar-days-header">
+    <span class="day">L</span>
+    <span class="day">M</span>
+    <span class="day">X</span>
+    <span class="day">J</span>
+    <span class="day">V</span>
+    <span class="day">S</span>
+    <span class="day">D</span>
+  </div>
+
+  <div class="calendar">
+    <div class="calendar-grid">
+      <div
+      *ngFor="let day of daysInMonth"
+      (click)="selectDate(day)"
+      [class.selected]="selectedDate?.toDateString() === day.toDateString()"
+     
+      class="calendar-day"
+    >
+      {{ day.getDate() }}
+    </div>
+    </div>
+  </div>
+</div>

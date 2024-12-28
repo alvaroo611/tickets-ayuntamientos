@@ -1,0 +1,25 @@
+<div class="custom-dialog" [ngClass]="{'no-appointments': intervals.length === 0}">
+  <div class="dialog-header">
+    <button type="button" class="close-btn" mat-icon-button (click)="closeDialog()">
+      <mat-icon>close</mat-icon>
+    </button>
+    
+    <div *ngIf="intervals.length > 0" class="dialog-body yes-intervals">
+      <h6><strong>Citas</strong></h6>
+    </div>
+  </div>
+
+
+  <div *ngIf="intervals.length > 0" class="dialog-body yes-intervals">
+
+    <div class="intervals-container">
+      <button
+        *ngFor="let interval of intervals"
+        class="interval-button"
+        (click)="selectInterval(interval)"
+      >
+        {{ formatTime(interval.start_time) }} - {{ formatTime(interval.end_time) }}
+      </button>
+    </div>
+  </div>
+  </div>

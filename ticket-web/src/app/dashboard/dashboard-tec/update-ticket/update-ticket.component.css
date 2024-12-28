@@ -1,0 +1,179 @@
+/* Estilos generales */
+html, body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+
+
+/* Configuración del modal */
+.custom-modal .mat-dialog-container {
+  padding: 20px;  /* Ajusta el padding */
+  border-radius: 12px;
+  max-height: 80vh; /* Asegura que el modal no exceda la altura de la ventana */
+  box-sizing: border-box;
+  overflow: auto; /* Permite scroll si es necesario */
+  max-width: 90vw;  /* Ajuste para hacerlo responsive */
+  width: 100%;  /* Asegura que el modal use todo el ancho disponible */
+}
+
+/* Personalización del scroll para el formulario */
+.employee-form {
+  background-color: #fff;
+  padding: 20px;  /* Reducir el padding para adaptarse mejor al contenedor */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;  /* Asegura que el formulario se ajuste al ancho del contenedor */
+  max-width: 100%;  /* Asegura que no sobrepasemos el ancho disponible */
+  max-height: 80vh;  /* Limita la altura máxima */
+  overflow-y: auto;  /* Habilita el scroll vertical */
+  overflow-x: hidden; /* Deshabilita el scroll horizontal */
+  transition: all 0.3s ease;
+
+  /* Personalización del scroll */
+  scrollbar-width: thin;  /* Firefox */
+  scrollbar-color: #e74c3c #f0f0f0; /* Firefox - color del thumb y el track */
+}
+
+
+/* Para navegadores Webkit (Chrome, Safari) */
+.employee-form::-webkit-scrollbar {
+  width: 8px; /* Ancho del scroll */
+}
+
+.employee-form::-webkit-scrollbar-thumb {
+  background-color: #e74c3c; /* Color del "thumb" (parte que se arrastra) */
+  border-radius: 10px;
+}
+
+.employee-form::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* Color de la pista (background del scroll) */
+  border-radius: 10px;
+}
+
+.employee-form::-webkit-scrollbar-thumb:hover {
+  background-color: #c0392b; /* Color del thumb cuando está siendo arrastrado */
+}
+
+/* Título del formulario */
+.employee-form h2 {
+  text-align: center;
+  color: #e74c3c;
+  margin-bottom: 20px;
+  font-size: 1.5em;  /* Aumenta el tamaño del título */
+}
+
+/* Estilos de los grupos de formulario */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* Ajuste de los campos de formulario */
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px; /* Reducir padding para mejor ajuste */
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease;
+}
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #e74c3c;
+  outline: none;
+  background-color: #fff;
+}
+
+/* Estilo del checkbox */
+.form-group input[type="checkbox"] {
+  width: auto;
+  margin-top: 5px;
+}
+/* Cuadro de texto para notas */
+.notes-textarea {
+  width: 100%; /* Ocupa el ancho completo del contenedor */
+  height: auto; /* Ajusta automáticamente la altura */
+  padding: 10px; /* Espaciado interno */
+  font-size: 14px; /* Tamaño del texto */
+  border: 1px solid #ddd; /* Borde claro */
+  border-radius: 5px; /* Bordes redondeados */
+  background-color: #f9f9f9; /* Fondo claro */
+  resize: vertical; /* Permite redimensionar solo verticalmente */
+  transition: border-color 0.3s ease; /* Transición para el foco */
+}
+
+.notes-textarea:focus {
+  border-color: #e74c3c; /* Color de borde al enfocarse */
+  outline: none; /* Elimina el contorno predeterminado */
+  background-color: #fff; /* Fondo blanco al enfocarse */
+}
+
+/* Contenedor de los botones */
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Alinea los botones a la derecha */
+  gap: 15px; /* Espacio entre los botones */
+  margin-top: 20px; /* Separación del resto del formulario */
+}
+
+/* Botón principal (Guardar) */
+.primary-btn {
+  background-color: #e74c3c; /* Rojo corporativo */
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.primary-btn:hover {
+  background-color: #c0392b; /* Rojo más oscuro */
+}
+
+/* Botón secundario (Cancelar) */
+.secondary-btn {
+  background-color: #bbb; /* Gris claro */
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.secondary-btn:hover {
+  background-color: #999; /* Gris más oscuro */
+}
+
+
+/* Estilo para el mensaje de éxito */
+.success-snack {
+  background-color: green;
+  color: white;
+}
+
+/* Estilo para el mensaje de error */
+.error-snack {
+  background-color: red;
+  color: white;
+}

@@ -1,0 +1,107 @@
+/* General layout */
+.live-ticket-room {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* Header styles */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #d32f2f; /* Rojo oscuro */
+  color: #fff;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.header p {
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
+
+/* Tickets container layout */
+.tickets-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Aumentar espacio entre tarjetas */
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+/* Ticket card style */
+.ticket-card {
+  background-color: #c7c0c0;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 140px;
+  box-sizing: border-box;
+
+}
+
+
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.ticket-header h3 {
+  font-size: 1.6rem;
+  margin: 0;
+  font-weight: bold;
+  color: #333;
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #d32f2f; /* Rojo principal */
+  text-transform: capitalize;
+}
+
+.ticket-details p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* Status styles */
+.ticket-card.en_cumplimiento .status-pill {
+  background-color: #b71c1c; /* Rojo más oscuro para "En Cumplimiento" */
+}
+
+.ticket-card.en_progreso .status-pill {
+  background-color: #ff9800; /* Naranja para "En Progreso" */
+}
+
+.ticket-card.finalizado .status-pill {
+  background-color: #388e3c; /* Verde para "Finalizado" */
+}

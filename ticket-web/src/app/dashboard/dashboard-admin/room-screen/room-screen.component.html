@@ -1,0 +1,45 @@
+<div class="room-header">
+  <button class="back-button" mat-icon-button (click)="closeTab()">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <h1>Salas</h1>
+</div>
+
+
+<div class="room-list">
+  <div class="header-actions d-flex align-items-center">
+    <div class="input-group google-search-bar flex-grow-1">
+      <input type="text" class="form-control" placeholder="Buscar..." (input)="onSearch($event)" aria-label="Buscar...">
+      <button class="btn btn-outline-secondary" type="button">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+    <button mat-raised-button color="primary" (click)="openCreateRoomDialog()" class="create-room-btn ms-3">
+      <mat-icon>add</mat-icon> Crear Nueva Sala
+    </button>
+  </div>
+
+  <ul class="room-items">
+    <li *ngFor="let room of filteredRooms" class="room-item">
+      <div class="room-info">
+        <h3>
+          <mat-icon>meeting_room</mat-icon> {{ room.building }}
+        </h3>
+        <p><strong>Oficina: {{ room.office }}, Piso: {{ room.floor }}</strong></p>
+        <p><strong>Departamento: {{ getDepartmentNameForRoom(room.roomId) }}</strong></p> <!-- Aquí se muestra el nombre del departamento -->
+        <div [ngClass]="room.isActive ? 'status-badge status-active' : 'status-badge status-inactive'">
+          {{ room.isActive ? 'Activo' : 'Inactivo' }}
+        </div>
+      </div>
+      <div class="room-actions">
+        <button mat-icon-button color="accent" (click)="openEditRoomDialog(room)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="updateRoomStatus(room)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </li>
+  </ul>
+
+</div>

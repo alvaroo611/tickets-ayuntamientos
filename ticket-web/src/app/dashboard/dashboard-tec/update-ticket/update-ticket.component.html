@@ -1,0 +1,88 @@
+<form class="employee-form" (ngSubmit)="saveTicketChanges()">
+  <!-- DNI del solicitante -->
+  <div class="form-group">
+    <label for="requester_dni">DNI del Solicitante:</label>
+    <input
+      type="text"
+      id="requester_dni"
+      [(ngModel)]="requester_dni"
+      name="requester_dni"
+      disabled
+      minlength="8"
+      maxlength="10"
+       />
+  </div>
+
+  <!-- Nombre del solicitante -->
+  <div class="form-group">
+    <label for="external_user_name">Nombre del Solicitante:</label>
+    <input
+      type="text"
+      id="external_user_name"
+      [(ngModel)]="external_user_name"
+      name="external_user_name"
+      disabled />
+  </div>
+
+  <!-- Notas -->
+  <div class="form-group">
+    <label for="notes">Notas:</label>
+    <textarea
+    id="notes"
+    [(ngModel)]="notes"
+    name="notes"
+    class="notes-textarea"
+    rows="6"
+    colums="5"
+    placeholder="Escribe tus notas aquí..."></textarea>
+  </div>
+
+  <!-- Estado del ticket -->
+  <div class="form-group">
+    <label for="status">Estado:</label>
+    <select
+      id="status"
+      [(ngModel)]="status"
+      name="status"
+      required>
+      <option value="en_cumplimiento">Pendiente</option>
+      <option value="en_progreso">En Proceso</option>
+      <option value="finalizado">Finalizado</option>
+    </select>
+  </div>
+
+  <!-- Fecha de cita -->
+  <div class="form-group">
+    <label for="appointment_date">Fecha de Cita:</label>
+    <input
+      type="datetime-local"
+      id="appointment_date"
+      [(ngModel)]="appointment_date"
+      name="appointment_date"
+      disabled />
+  </div>
+
+
+
+
+
+  <!-- Teléfono -->
+  <div class="form-group">
+    <label for="phone">Número de Teléfono:</label>
+    <input
+      type="text"
+      id="phone"
+      [(ngModel)]="phone"
+      name="phone"
+      disabled
+      pattern="^[0-9]{9}$" />
+  </div>
+
+
+
+  <div class="button-container">
+    <button type="submit" class="primary-btn">Guardar Cambios</button>
+    <button type="button" class="secondary-btn" (click)="closeDialog()">Cancelar</button>
+  </div>
+
+</form>

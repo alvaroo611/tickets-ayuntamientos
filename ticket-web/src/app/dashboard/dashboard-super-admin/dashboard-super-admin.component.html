@@ -1,0 +1,60 @@
+<div class="city-council-header">
+  <div class="user-icon-container">
+    <i class="fas fa-user-circle" (click)="toggleLogoutMenu()"></i>
+    <div class="logout-menu" *ngIf="showLogoutMenu">
+      <button (click)="changePassword()">Cambiar contraseña</button>
+      <button (click)="logout()">Salir</button>
+    </div>
+  </div>
+  <h2>Administrar Ayuntamientos</h2>
+</div>
+
+<div class="city-council-list">
+  <div class="header-actions d-flex align-items-center">
+    <div class="input-group google-search-bar flex-grow-1">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Buscar..."
+        (input)="onSearch($event)"
+        aria-label="Buscar..."
+      />
+      <button class="btn btn-outline-secondary" type="button">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+    <button mat-raised-button color="primary" (click)="openCreateCityCouncilDialog()" class="create-city-council-btn ms-3">
+      <mat-icon>add</mat-icon> Crear Nuevo Ayuntamiento
+    </button>
+  </div>
+
+  <ul class="city-council-items">
+    <li *ngFor="let cityCouncil of filteredCityCouncils" class="city-council-item">
+      <div class="city-council-info">
+        <h3>
+          <mat-icon class="icon-city-council">location_city</mat-icon> {{ cityCouncil.name }}
+        </h3>
+        <div [ngClass]="cityCouncil.isActive ? 'status-badge status-active' : 'status-badge status-inactive'">
+          {{ cityCouncil.isActive ? 'Activo' : 'Inactivo' }}
+        </div>
+      </div>
+      <div class="city-council-actions">
+        <button class="config-admin-btn" (click)="openAdminConfigScreen(cityCouncil)">
+          Configurar Administradores
+        </button>
+        <button mat-icon-button color="accent" (click)="openEditCityCouncilDialog(cityCouncil)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button
+
+          (click)="toggleCityCouncilStatus(cityCouncil)"
+          [ngClass]="{ 'inactive': !cityCouncil.isActive }">
+          <mat-icon>delete</mat-icon>
+        </button>
+
+        <!-- Botón para configurar administradores -->
+
+      </div>
+    </li>
+  </ul>
+</div>

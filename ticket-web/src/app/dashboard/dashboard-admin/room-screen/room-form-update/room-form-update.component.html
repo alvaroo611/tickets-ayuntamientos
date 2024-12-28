@@ -1,0 +1,45 @@
+<form class="room-form" (ngSubmit)="saveRoomChanges()">
+  <button type="button" class="close-btn" mat-icon-button (click)="closeTab()">
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <div class="form-group">
+    <label for="building">Edificio:</label>
+    <input type="text" id="building" [(ngModel)]="building" name="building" required />
+  </div>
+
+  <div class="form-group">
+    <label for="office">Oficina:</label>
+    <input type="number" id="office" [(ngModel)]="office" name="office" required />
+  </div>
+
+  <div class="form-group">
+    <label for="floor">Piso:</label>
+    <input type="number" id="floor" [(ngModel)]="floor" name="floor" required />
+  </div>
+
+   <!-- Primer select para seleccionar el departmentId -->
+   <div class="form-group">
+    <label for="departmentId">Departamento:</label>
+    <select id="departmentId" [(ngModel)]="departmentId" name="departmentId" (change)="onDepartmentChange($event)" required>
+      <option *ngIf="!departmentId" value="" disabled selected>Selecciona el nuevo departamento</option>
+      <option *ngFor="let dept of departments" [value]="dept.departmentId">
+        {{ dept.departmentName }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="isActive">Activo:</label>
+    <input type="checkbox" id="isActive" [(ngModel)]="isActive" name="isActive" />
+  </div>
+
+
+
+
+
+
+
+
+  <button type="submit" class="submit-btn">Actualizar</button>
+</form>

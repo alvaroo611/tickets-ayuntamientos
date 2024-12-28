@@ -1,0 +1,42 @@
+<form class="department-form" (ngSubmit)="createDepartment()">
+  <button type="button" class="close-btn" mat-icon-button (click)="closeForm()">
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <div class="form-group">
+    <label for="departmentName">Nombre del Departamento:</label>
+    <input type="text" id="departmentName" [(ngModel)]="departmentName" name="departmentName" required />
+  </div>
+
+  <div class="form-group">
+    <label for="description">Descripción:</label>
+    <textarea id="description" [(ngModel)]="description" name="description" required class="description-textarea"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="responsible">Responsable:</label>
+    <select
+      id="responsible"
+      [(ngModel)]="responsible"
+      name="responsible"
+      required
+    >
+      <!-- Opción adicional para "Sin asignar" -->
+      <option value="" disabled selected>Seleccionar responsable</option>
+      <option value="unassigned">Sin asignar</option>
+
+      <!-- Opciones dinámicas de usuarios responsables -->
+      <option *ngFor="let user of responsibleUsers" [value]="user.name">
+        {{ user.name }}
+      </option>
+    </select>
+  </div>
+
+
+  <div class="form-group">
+    <label for="isActive">Activo:</label>
+    <input type="checkbox" id="isActive" [(ngModel)]="isActive" name="isActive" checked />
+  </div>
+
+  <button type="submit" class="submit-btn">Crear</button>
+</form>

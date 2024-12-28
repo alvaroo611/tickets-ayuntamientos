@@ -1,0 +1,124 @@
+/* General Styles */
+.dashboard-header {
+  background-color: #d42d2d;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-title-container {
+  margin: 0 auto;
+}
+
+.dashboard-title {
+  font-size: 40px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo para el icono de usuario */
+.user-icon-container {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilo para el menú desplegable del logout */
+.logout-menu {
+  background-color: #fff;
+  color: #d42d2d;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 120px;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Estilo para los botones dentro del menú de logout */
+.logout-menu button {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  background-color: #fff;
+  color: #d42d2d;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-menu button:hover {
+  background-color: #f2f2f2;
+}
+
+/* Contenedor de tarjetas */
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 1%;
+  justify-items: center;
+  margin-top: 6%;
+  padding: 2%;
+  border-radius: 8px;
+}
+
+/* Estilo de cada tarjeta */
+.card {
+  background-color: #f6f4f4;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 70%;
+  min-width: 120px;
+  text-align: center;
+  padding: 2%;
+  margin: 2%;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Icono en la tarjeta */
+.card-icon {
+  font-size: 2vw;
+  color: #d42d2d;
+  margin-bottom: 4px;
+}
+
+.card-info h2 {
+  font-size: 1.5vw;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.card-info p {
+  color: #777;
+  font-size: 1.2vw;
+}

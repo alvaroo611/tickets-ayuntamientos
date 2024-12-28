@@ -1,0 +1,227 @@
+/* Cabecera para Asignar Empleados */
+.appointment-header {
+  position: relative;
+  background-color: #d42d2d; /* Fondo rojo */
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-bottom: 20px;
+}
+
+.appointment-header h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.appointment-header p {
+  font-size: 18px;
+  color: #ffe6e6;
+  margin-top: 10px;
+}
+
+.back-button {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  color: white;
+  border: none;
+  padding: 8px;
+}
+
+.back-button mat-icon {
+  font-size: 30px;
+}
+
+.back-button:active mat-icon {
+  color: #ffdfdf;
+}
+
+
+
+.room-list {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+.create-room-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  margin-left: auto;
+}
+
+.google-search-bar {
+  max-width: 600px;
+  border: 1px solid #dcdcdc;
+  border-radius: 25px;
+  background-color: #f1f3f4;
+  height: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.google-search-bar .form-control:focus {
+  border: none;
+  outline: none;
+}
+
+.google-search-bar .form-control {
+  border: none;
+  background-color: transparent;
+  padding-left: 20px;
+  font-size: 16px;
+  height: 100%;
+  border-radius: 25px 0 0 25px;
+  padding-right: 50px;
+  flex-grow: 1;
+}
+
+.google-search-bar .btn {
+  border: none;
+  border-radius: 0 25px 25px 0;
+  background-color: #f1f3f4;
+  font-size: 20px;
+  padding: 0 15px;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+  min-width: 70px;
+}
+
+.status-active {
+  background-color: #4caf50;
+}
+
+.status-inactive {
+  background-color: #f44336;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  background-color: #d32f2f;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.header-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #f6f4f4;
+  text-transform: uppercase;
+  margin: 0;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.header button {
+  position: absolute;
+  left: 10px;
+  color: #f6f4f4;
+}
+
+.room-items {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.room-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f6f4f4;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-grow: 1;
+  height: 100%;
+}
+
+.room-item .room-info {
+  flex-grow: 1;
+}
+
+.room-item h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.room-item mat-icon {
+  font-size: 24px;
+  color: #d32f2f;
+}
+
+.room-item p {
+  margin: 5px 0 0;
+  color: #000000;
+}
+
+.room-item .room-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end; /* Coloca los botones a la derecha */
+  align-items: center;
+}
+
+.room-item .room-actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #d32f2f;
+}
+
+.room-item .room-actions mat-icon {
+  font-size: 20px;
+  color: #d32f2f;
+}

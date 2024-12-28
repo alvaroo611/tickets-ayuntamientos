@@ -1,0 +1,304 @@
+/* Estilos generales */
+.employee-list {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  
+}
+
+/* Estilo general para el contenedor de búsqueda y botón */
+.header-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;  /* Añadir un margen inferior para separar de la lista */
+}
+
+.header-actions mat-form-field {
+  flex-grow: 1;
+}
+
+.create-employee-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+/* Contenedor de la barra de búsqueda */
+.google-search-bar {
+  max-width: 600px;
+  border: 1px solid #dcdcdc;
+  border-radius: 25px;
+  background-color: #f1f3f4;
+  height: 50px;
+  position: relative;
+  display: flex;
+  align-items: center; /* Alinea los elementos al centro verticalmente */
+}
+
+/* Elimina el borde en el campo de texto cuando está en foco */
+.google-search-bar .form-control:focus {
+  border: none; /* Elimina el borde de foco */
+  outline: none; /* Elimina el contorno de foco */
+}
+
+/* Barra de entrada de texto */
+.google-search-bar .form-control {
+  border: none;
+  background-color: transparent;
+  padding-left: 20px;
+  font-size: 16px;
+  height: 100%;
+  border-radius: 25px 0 0 25px;
+  padding-right: 50px; /* Espacio para el botón */
+  flex-grow: 1; /* Permite que el input ocupe el espacio disponible */
+}
+
+/* Estilo y posicionamiento del botón */
+.google-search-bar .btn {
+  border: none;
+  border-radius: 0 25px 25px 0;
+  background-color: #f1f3f4;
+  font-size: 20px;
+  padding: 0 15px;
+  position: absolute;
+  right: 0; /* Lo coloca al final de la barra */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsividad - Asegura que el input no se sobrepase */
+@media (max-width: 768px) {
+  .google-search-bar {
+    max-width: 100%;
+  }
+}
+
+.create-employee-btn {
+  margin-left: auto; /* Empuja el botón hacia la derecha */
+  font-size: 16px; /* Tamaño de fuente para el botón */
+}
+
+/* Badge para el estado activo */
+.status-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+  text-align: center;
+  min-width: 70px;
+}
+
+/* Color verde para estado activo */
+.status-active {
+  background-color: #4caf50;
+}
+
+/* Color rojo para estado inactivo */
+.status-inactive {
+  background-color: #f44336;
+}
+
+/* Estilo de la cabecera para centrar el título */
+.header {
+  display: flex;
+  align-items: center;
+  background-color: #d32f2f;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.header-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #f6f4f4;
+  text-transform: uppercase;
+  margin: 0;
+  flex-grow: 1; /* Esto permite que el título ocupe todo el espacio restante */
+  text-align: center; /* Centra el título en el espacio disponible */
+}
+
+/* Estilo del botón de cerrar para posicionarlo a la izquierda */
+.header button {
+  position: absolute;
+  left: 10px;  /* Alinea el botón de cerrar hacia la izquierda */
+  color: #f6f4f4;
+}
+
+.employee-items {
+  list-style-type: none;
+  padding: 0;
+}
+
+.employee-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f6f4f4;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.employee-item .employee-info {
+  flex: 1;
+}
+
+.employee-item h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.employee-item mat-icon {
+  font-size: 24px;
+  color: #d32f2f;
+}
+
+.employee-item p {
+  margin: 5px 0 0;
+  color: #000000;
+}
+
+.employee-item .employee-actions button {
+  margin-left: 10px;
+}
+
+.employee-item .employee-actions mat-icon {
+  font-size: 20px;
+}
+
+.employee-item .inactive p {
+  color: #dc3545;
+}
+
+/* Estilo para el botón de cerrar */
+button[mat-icon-button] {
+  color: #d32f2f;
+  margin-right: 10px;
+}
+
+/* Estilo para el badge de estado de la sala */
+.room-status-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+  text-align: center;
+  min-width: 70px;
+}
+
+/* Colores de estado para salas */
+.room-status-active {
+  background-color: #4caf50;
+}
+
+.room-status-inactive {
+  background-color: #f44336;
+}
+
+/* Estilos de la barra de búsqueda de salas */
+.room-search-bar {
+  max-width: 600px;
+  border: 1px solid #dcdcdc;
+  border-radius: 25px;
+  background-color: #f1f3f4;
+  height: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.room-search-bar .form-control {
+  border: none;
+  background-color: transparent;
+  padding-left: 20px;
+  font-size: 16px;
+  height: 100%;
+  border-radius: 25px 0 0 25px;
+  padding-right: 50px;
+  flex-grow: 1;
+}
+
+.room-search-bar .btn {
+  border: none;
+  border-radius: 0 25px 25px 0;
+  background-color: #f1f3f4;
+  font-size: 20px;
+  padding: 0 15px;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Cabecera para Asignar Empleados */
+.appointment-header {
+  position: relative;
+  background-color: #d42d2d; /* Fondo rojo */
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-bottom: 20px;
+}
+
+.appointment-header h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.appointment-header p {
+  font-size: 18px;
+  color: #ffe6e6;
+  margin-top: 10px;
+}
+
+.back-button {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  color: white !important;
+  border: none;
+  padding: 8px;
+}
+
+.back-button mat-icon {
+  font-size: 30px;
+}
+
+.back-button:active mat-icon {
+  color: #ffdfdf;
+}
+
+/* Responsividad de la barra de búsqueda */
+@media (max-width: 768px) {
+  .room-search-bar {
+    max-width: 100%;
+  }
+}

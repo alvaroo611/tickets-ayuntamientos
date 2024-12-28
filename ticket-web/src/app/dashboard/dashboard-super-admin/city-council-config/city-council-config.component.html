@@ -1,0 +1,55 @@
+<div class="city-council-header">
+  <button class="back-button" mat-icon-button (click)="closeTab()">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <h2>Configurar Administradores</h2>
+  <h3 class="subtitle">
+    {{ cityCouncil.name }}
+  </h3>
+</div>
+
+<div class="city-council-list">
+  <div class="header-actions">
+    <div class="google-search-bar">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Buscar..."
+        (input)="onSearch($event)"
+        aria-label="Buscar..."
+      />
+      <button class="btn" type="button">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+    <button mat-raised-button color="primary" (click)="openCreateAdminDialog()" class="create-city-council-btn ms-3">
+      <mat-icon>add</mat-icon> Crear Nuevo Administrador
+    </button>
+  </div>
+
+  <ul class="city-council-items">
+    <li *ngFor="let admin of filteredAdmins" class="city-council-item">
+      <div class="city-council-info">
+        <h3>
+          <mat-icon class="icon-city-council">account_circle</mat-icon> {{ admin.name }}
+        </h3>
+        <p>{{ admin.email }}</p>
+        <div [ngClass]="admin.isActive ? 'status-badge status-active' : 'status-badge status-inactive'">
+          {{ admin.isActive ? 'Activo' : 'Inactivo' }}
+        </div>
+      </div>
+      <div class="city-council-actions">
+        <button mat-icon-button color="accent" (click)="openEditAdminDialog(admin)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          (click)="toggleAdminStatus(admin)"
+          [ngClass]="{ 'inactive': !admin.isActive }"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>

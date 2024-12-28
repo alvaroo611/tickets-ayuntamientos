@@ -1,0 +1,215 @@
+.room-list {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  
+}
+.header-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: space-between; /* Distribuye los elementos */
+}
+
+.create-room-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  margin-left: auto; /* Esto mueve el botón a la derecha */
+}
+
+/* Contenedor de la barra de búsqueda */
+.google-search-bar {
+  max-width: 600px;
+  border: 1px solid #dcdcdc;
+  border-radius: 25px;
+  background-color: #f1f3f4;
+  height: 50px;
+  position: relative;
+  display: flex;
+  align-items: center; /* Alinea los elementos al centro verticalmente */
+}
+/* Elimina el borde en el campo de texto cuando está en foco */
+.google-search-bar .form-control:focus {
+  border: none; /* Elimina el borde de foco */
+  outline: none; /* Elimina el contorno de foco */
+}
+/* Barra de entrada de texto */
+.google-search-bar .form-control {
+  border: none;
+  background-color: transparent;
+  padding-left: 20px;
+  font-size: 16px;
+  height: 100%;
+  border-radius: 25px 0 0 25px;
+  padding-right: 50px; /* Espacio para el botón */
+  flex-grow: 1; /* Permite que el input ocupe el espacio disponible */
+}
+
+/* Estilo y posicionamiento del botón */
+.google-search-bar .btn {
+  border: none;
+  border-radius: 0 25px 25px 0;
+  background-color: #f1f3f4;
+  font-size: 20px;
+  padding: 0 15px;
+  position: absolute;
+  right: 0; /* Lo coloca al final de la barra */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Responsividad - Asegura que el input no se sobrepase */
+@media (max-width: 768px) {
+  .google-search-bar {
+    max-width: 100%;
+  }
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+  min-width: 70px;
+}
+
+.status-active {
+  background-color: #4caf50;
+}
+
+.status-inactive {
+  background-color: #f44336;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  background-color: #d32f2f;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.header-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #f6f4f4;
+  text-transform: uppercase;
+  margin: 0;
+  flex-grow: 1; /* Esto permite que el título ocupe todo el espacio restante */
+  text-align: center; /* Centra el título en el espacio disponible */
+}
+
+.header button {
+  position: absolute;
+  left: 10px;
+  color: #f6f4f4;
+}
+
+.room-items {
+  list-style-type: none;
+  padding: 0;
+}
+
+.room-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f6f4f4;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+/* Encabezado de Salas */
+.room-header {
+  position: relative;
+  background-color: #d42d2d; /* Fondo rojo */
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-bottom: 20px;
+}
+
+.room-header h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.room-header p {
+  font-size: 18px;
+  color: #ffe6e6;
+  margin-top: 10px;
+}
+
+/* Botón de volver */
+.back-button {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  color: white;
+  border: none;
+  padding: 8px;
+}
+
+.back-button mat-icon {
+  font-size: 30px;
+  color: white;
+}
+
+.back-button:hover mat-icon,
+.back-button:focus mat-icon {
+  color: #ffdfdf; /* Cambio de color en hover */
+}
+
+.room-item .room-info {
+  flex: 1;
+}
+
+.room-item h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.room-item mat-icon {
+  font-size: 24px;
+  color: #d32f2f;
+}
+
+.room-item p {
+  margin: 5px 0 0;
+  color: #000000;
+}
+
+.room-item .room-actions button {
+  margin-left: 10px;
+}
+
+.room-item .room-actions mat-icon {
+  font-size: 20px;
+}

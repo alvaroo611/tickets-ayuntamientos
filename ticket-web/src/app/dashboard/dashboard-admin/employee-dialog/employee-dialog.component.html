@@ -1,0 +1,51 @@
+<div class="appointment-header">
+  <!-- Botón de Volver -->
+  <button mat-icon-button class="back-button" (click)="closeTab()">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+
+  <!-- Título y subtítulo -->
+  <div class="appointment-title">
+    <h1>Empleados</h1>
+  </div>
+
+</div>
+
+<div class="employee-list">
+  <!-- Barra de búsqueda tipo Google y botón de crear debajo del título -->
+  <div class="header-actions">
+    <div class="google-search-bar">
+      <input type="text" class="form-control" placeholder="Buscar..." (input)="onSearch($event)" aria-label="Buscar...">
+      <button class="btn">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+    <button mat-raised-button color="primary" (click)="openCreateEmployeeDialog()" class="create-employee-btn">
+      <mat-icon>add</mat-icon> Crear Nuevo Empleado
+    </button>
+  </div>
+
+  <!-- Lista de empleados -->
+  <ul class="employee-items">
+    <li *ngFor="let employee of filteredEmployees" class="employee-item">
+      <div class="employee-info">
+        <h3>
+          <mat-icon>account_circle</mat-icon> {{ employee.name }}
+        </h3>
+        <p><strong>Departamento: {{ employee.department.departmentName }}</strong></p>
+        <p><strong>{{ getRoleName(employee.rol) }}</strong></p>
+        <div [ngClass]="employee.isActive ? 'status-badge status-active' : 'status-badge status-inactive'">
+          {{ employee.isActive ? 'Activo' : 'Inactivo' }}
+        </div>
+      </div>
+      <div class="employee-actions">
+        <button mat-icon-button color="accent" (click)="openEditEmployeeDialog(employee)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="updateEmployeeStatus(employee)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>

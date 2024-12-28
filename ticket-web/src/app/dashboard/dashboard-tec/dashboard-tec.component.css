@@ -1,0 +1,290 @@
+/* General Styles */
+.dashboard-header {
+  background-color: #d42d2d;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-title-container {
+  margin: 0 auto;
+}
+
+.dashboard-title {
+  font-size: 40px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.menu-button {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+}
+
+.dashboard-container {
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+
+}
+
+/* Ticket Summary Styles */
+.tickets-summary {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.ticket-card {
+  width: 30%;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-card.pending {
+  background-color: #ffc107;
+}
+
+.ticket-card.in-progress {
+  background-color: #007bff;
+}
+
+.ticket-card.completed {
+  background-color: #28a745;
+}
+
+/* Tickets List Styles */
+.tickets-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tickets-list li {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tickets-list .ticket-info span {
+  font-weight: bold;
+}
+/* Estilo para la información del ticket */
+.ticket-info {
+  display: flex; /* Alinea en fila */
+  justify-content: space-between; /* Espaciado entre los elementos */
+  align-items: center; /* Alinea verticalmente */
+  gap: 20px; /* Espacio entre nombre y fecha */
+}
+
+/* Estilo para el nombre del usuario */
+.ticket-info .ticket-name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Estilo para la fecha */
+.ticket-info .ticket-date {
+  font-size: 14px;
+  color: #555; /* Color más tenue para la fecha */
+}
+
+.tickets-list button {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #d42d2d;
+  color: #fff;
+  border: none;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.tickets-list button:hover {
+  background-color: #b02424;
+}
+
+.mat-raised-button {
+  margin: 0;
+}
+
+.tickets-list h2 {
+  font-family: 'Roboto', sans-serif; /* Tipografía profesional */
+  font-size: 28px; /* Tamaño destacado pero no exagerado */
+  font-weight: bold; /* Negrita para resaltar */
+  color: #333; /* Gris oscuro profesional */
+  margin-bottom: 20px; /* Espaciado adecuado debajo */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  letter-spacing: 1px; /* Espaciado entre letras */
+
+  padding-bottom: 10px; /* Espacio entre texto y línea */
+}
+
+/* Estilo para el icono de usuario */
+.user-icon-container {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilo para el menú desplegable del logout */
+.logout-menu {
+  background-color: #fff; /* Fondo blanco */
+  color: #d42d2d; /* Letras rojas */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 120px;
+  margin-top: 10px; /* Separar el menú del icono */
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Estilo para los botones dentro del menú de logout */
+.logout-menu button {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  background-color: #fff;
+  color: #d42d2d;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect para el botón */
+.logout-menu button:hover {
+  background-color: #f2f2f2;
+}
+
+/* Estilo del header */
+.dashboard-header {
+  background-color: #d42d2d;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para el título del dashboard */
+.dashboard-title-container {
+  margin: 0 auto;
+}
+
+.dashboard-title {
+  font-size: 40px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.menu-button {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+}
+
+/* Estilos para los badges de estado */
+.status-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  min-width: 70px;
+  text-align: center;
+}
+
+.status-badge:not(:last-child) {
+  margin-right: 8px; /* Ajusta el valor según el espacio deseado */
+}
+
+.status-en_cumplimiento {
+  background-color: #ffa726;
+}
+
+.status-en_progreso {
+  background-color: #42a5f5;
+}
+
+.status-finalizado {
+  background-color: #28a745;
+}
+
+/* Aseguramos que el contenedor de tickets se expanda completamente */
+.tickets-header {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%; /* Aseguramos que ocupe el 100% del ancho */
+  position: relative;
+  border-bottom: 2px solid #d42d2d;
+}
+
+/* Estilo para el título "Mis Tickets" */
+.tickets-header h2 {
+  margin: 0;
+  font-family: 'Roboto', sans-serif; /* Tipografía profesional */
+  font-size: 28px; /* Tamaño destacado pero no exagerado */
+  font-weight: bold; /* Negrita para resaltar */
+  color: #333; /* Gris oscuro profesional */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  letter-spacing: 1px; /* Espaciado entre letras */
+  padding-bottom: 10px; /* Espacio entre texto y línea */
+
+}
+
+/* Estilo para el filtro, alineándolo a la derecha */
+.filter-container {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.filter-container select {
+  padding: 5px;
+  font-size: 1rem;
+}

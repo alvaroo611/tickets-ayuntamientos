@@ -1,0 +1,74 @@
+<div class="appointment-header">
+  <!-- Botón de Volver -->
+  <button mat-icon-button class="back-button" (click)="closeTab()">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+
+  <!-- Título y subtítulo -->
+  <div class="appointment-title">
+    <h1>Asignar Horas Fuera</h1>
+  </div>
+  <div class="appointment-subtitle">
+    <p>Gestiona las asignaciones de horas fuera de un empleado en horario laboral</p>
+  </div>
+</div>
+
+<div class="room-list">
+  <!-- Barra de búsqueda y botón de creación -->
+  <div class="header-actions d-flex align-items-center">
+    <div class="input-group google-search-bar flex-grow-1">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Buscar..."
+        (input)="onSearch($event)"
+        aria-label="Buscar técnico..."
+      />
+      <button class="btn btn-outline-secondary" type="button">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="openCreateAssignmentDialog()"
+      class="create-room-btn ms-3"
+    >
+      <mat-icon>add</mat-icon> Crear Nueva Asignación
+    </button>
+  </div>
+
+  <!-- Listado de asignaciones -->
+  <ul class="room-items">
+    <li *ngFor="let hourAssignment of filteredHourAssignments" class="room-item">
+      <div class="room-info">
+        <h3>
+          <mat-icon>person</mat-icon>
+          {{ hourAssignment.employee?.name || 'Técnico no asignado' }}
+        </h3>
+        <p><strong>Motivo: {{ hourAssignment.motivo || 'Sin motivo especificado' }}</strong></p>
+        <p><strong>Fecha: {{ hourAssignment.fechaInicioSalida | date:'dd/MM/yyyy, HH:mm' }} - {{ hourAssignment.fechaFinSalida | date:'dd/MM/yyyy, HH:mm' }}</strong></p>
+        <div
+          [ngClass]="hourAssignment.isActive ? 'status-badge status-active' : 'status-badge status-inactive'"
+        >
+          {{ hourAssignment.isActive ? 'Activo' : 'Inactivo' }}
+        </div>
+
+      </div>
+      <div class="room-actions">
+        <button mat-icon-button color="accent" (click)="editAssignment(hourAssignment)">
+          <mat-icon>edit</mat-icon>
+
+        </button>
+
+        <button
+        mat-icon-button
+        color="warn"
+        (click)="updateStatus(hourAssignment)"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+      </div>
+    </li>
+  </ul>
+</div>

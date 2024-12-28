@@ -1,0 +1,50 @@
+<form class="employee-room-form" (ngSubmit)="updateEmployeeRoom()">
+  <button type="button" class="close-btn" mat-icon-button (click)="closeForm()">
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <div class="form-group">
+    <label for="employeeDNI">Empleado:</label>
+    <select id="employeeDNI" [(ngModel)]="employeeDNI" name="employeeDNI" (change)="onEmployeeChange()" required>
+      <option *ngIf="!employeeDNI" value="" disabled selected>Seleccionar Empleado</option>
+      <option *ngFor="let employee of employees" [value]="employee.DNI">
+        {{ employee.name }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="roomId">Sala:</label>
+    <select id="roomId" [(ngModel)]="roomId" name="roomId" (ngModelChange)="onRoomChange()" required>
+      <option *ngIf="!roomId" value="" disabled selected>Seleccionar Sala</option>
+      <option *ngFor="let room of rooms" [value]="room.roomId">
+        {{ room.building }}
+      </option>
+    </select>
+  </div>
+
+
+  <div class="form-group">
+    <label for="table">Mesa:</label>
+    <input type="text" id="table" [(ngModel)]="table" name="table" required />
+  </div>
+
+  <div class="form-group">
+    <label for="startDate">Fecha de Inicio:</label>
+    <input type="date" id="startDate" [(ngModel)]="startDate" name="startDate" required />
+  </div>
+
+  <div class="form-group">
+    <label for="endDate">Fecha de Fin:</label>
+    <input type="date" id="endDate" [(ngModel)]="endDate" name="endDate" required />
+  </div>
+
+  <div class="form-group">
+    <label for="isActive">Activo:</label>
+    <input type="checkbox" id="isActive" [(ngModel)]="isActive" name="isActive" />
+  </div>
+
+  <button type="submit" class="submit-btn" [disabled]="!employeeDNI || !roomId || !startDate || !endDate || !table">
+    Actualizar
+  </button>
+</form>
