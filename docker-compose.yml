@@ -1,7 +1,13 @@
 
 version: '3.8'
 services:
-
+  angular-app:
+    build: ./ticket-web
+    container_name: angular-app
+    ports:
+      - "4200:80"
+    depends_on:
+      - client-gateway
   client-gateway:
     build: ./client-gateway
     ports:
